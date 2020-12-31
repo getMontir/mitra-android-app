@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Widget.GetMontirMitra.BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/Animation.GetMontirMitra.BottomSheet.Modal</item>
+        <item name="bottomSheetStyle">@style/Widget.GetMontirMitra.BottomSheet.Modal</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.BottomSheet.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">?attr/shapeAppearanceLargeComponent</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.GetMontirMitra.Button</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearance">@style/ShapeAppearance.GetMontirMitra.Button</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.Button.OutlinedButton.Primary">
+        <item name="strokeColor">@color/btn_stroke_color_selector</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.Button.OutlinedButton.Icon">
+        <item name="android:paddingLeft">18dp</item>
+        <item name="iconTint">@color/transparent</item>
+        <item name="iconTintMode">add</item>
+        <item name="android:textColor">#9098b1</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.HintTextAppearance" parent="TextAppearance.Design.Hint">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/WidgetOverlay.GetMontirMitra.TextInputLayout</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.GetMontirMitra.SmallComponent</item>
+        <item name="hintTextColor">#385084</item>
+        <item name="boxStrokeColor">@color/bg_input_border</item>
+        <item name="boxBackgroundColor">@color/bg_input_background</item>
+        <item name="android:insetLeft">20dp</item>
+        <item name="hintTextAppearance">@style/Widget.GetMontirMitra.HintTextAppearance</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <item name="itemTextAppearance">?attr/textAppearanceBody2</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.CheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox"/>
+
+    <style name="Widget.GetMontirMitra.Toolbar.White" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
+        <item name="android:background">@color/transparent</item>
+        <item name="titleTextColor">@color/primaryColor</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.Toolbar.Inverted" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
+        <item name="android:background">#0B2031</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="homeAsUpIndicator">@drawable/abc_ic_clear_material</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.ActionButton.Overflow" parent="Widget.AppCompat.ActionButton.Overflow"/>
+
+    <style name="WidgetOverlay.GetMontirMitra.TextInputLayout" parent="">
+        <item name="editTextStyle">@style/WidgetOverlay.GetMontirMitra.TextInputEditText</item>
+    </style>
+
+    <style name="WidgetOverlay.GetMontirMitra.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.FilledBox"/>
+
+</resources>

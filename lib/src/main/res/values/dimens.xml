@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- LOADER -->
+    <dimen name="loader_padding">10dp</dimen>
+    <dimen name="loader_width">75dp</dimen>
+    <dimen name="loader_height">75dp</dimen>
+
+    <!-- PIN VIEW -->
+    <dimen name="pv_pin_view_item_size">48dp</dimen>
+    <dimen name="pv_pin_view_item_radius">5dp</dimen>
+    <dimen name="pv_pin_view_item_spacing">5dp</dimen>
+    <dimen name="pv_pin_view_item_line_width">2dp</dimen>
+    <dimen name="pv_pin_view_cursor_width">2dp</dimen>
+
+</resources>

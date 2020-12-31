@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#0b2031</color>
+    <color name="primaryLightColor">#35475a</color>
+    <color name="primaryDarkColor">#000009</color>
+
+    <color name="secondaryColor">#e4283d</color>
+    <color name="secondaryLightColor">#ff6468</color>
+    <color name="secondaryDarkColor">#aa0017</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="primary200">#E3E3E3</color>
+    <color name="primary300">#c6c6c6</color>
+    <color name="primary400">#aaaaaa</color>
+    <color name="primary500">#8e8e8e</color>
+    <color name="primary600">#717171</color>
+    <color name="primary700">#555555</color>
+    <color name="primary800">#393939</color>
+
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#000000</color>
+
+    <color name="black_800">#121212</color> <!--Color surface (dark)-->
+
+    <color name="red_200">#cf6679</color> <!--Color error (dark)-->
+    <color name="red_600">#b00020</color> <!--Color error (light)-->
+
+    <color name="dotInactiveColor">#33e4283d</color>
+    <color name="dotActiveColor">@color/secondaryColor</color>
+
+    <color name="line_selected">@color/primaryColor</color>
+    <color name="line_focused">#338f92a1</color>
+    <color name="line_default">#C5CAE9</color>
+
+    <!-- ARRAY -->
+    <array name="array_dot_active">
+        <item>@color/dotActiveColor</item>
+        <item>@color/dotActiveColor</item>
+        <item>@color/dotActiveColor</item>
+        <item>@color/dotActiveColor</item>
+        <item>@color/dotActiveColor</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dotInactiveColor</item>
+        <item>@color/dotInactiveColor</item>
+        <item>@color/dotInactiveColor</item>
+        <item>@color/dotInactiveColor</item>
+        <item>@color/dotInactiveColor</item>
+    </array>
+
+</resources>

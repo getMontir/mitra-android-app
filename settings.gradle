@@ -1,0 +1,4 @@
+include ':app'
+rootProject.name = "getMontir Mitra"
+include ":lib"
+project(":lib").projectDir = new File("/Volumes/Data/Programming/Android/getMontir3/lib")
