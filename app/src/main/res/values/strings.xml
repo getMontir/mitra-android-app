@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">getMontir Mitra</string>
+    <string name="gso_web_client_id" translatable="false">497671198429-kfmjc1620fufbevcpf1a7haaf8o6jj9l.apps.googleusercontent.com</string>
+    <string name="facebook_app_id" translatable="false">254994588228342</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb254994588228342</string>
 </resources>
