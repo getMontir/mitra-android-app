@@ -3,4 +3,81 @@
     <string name="gso_web_client_id" translatable="false">497671198429-kfmjc1620fufbevcpf1a7haaf8o6jj9l.apps.googleusercontent.com</string>
     <string name="facebook_app_id" translatable="false">254994588228342</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb254994588228342</string>
+
+    <!-- ERROR -->
+    <string name="error_field_name_empty">Please fill with your name</string>
+    <string name="error_field_phone_empty">Please fill with your phone number</string>
+    <string name="error_field_phone_length">Please fill with valid phone number</string>
+    <string name="error_field_email_empty">Please fill with your email</string>
+    <string name="error_field_email_invalid">Please fill with valid email address</string>
+    <string name="error_field_password_empty">Please fill password</string>
+    <string name="error_field_password_length">Password min 6 character</string>
+    <string name="error_field_password_confirmation">Password not same</string>
+    <string name="error_field_password_confirmation_empty">Please input again your password</string>
+    <string name="error_field_otp_empty">Please fill with your OTP code</string>
+    <string name="error_field_agree_unchecked">You must agree for registering</string>
+    <string name="error_auth_login_wrong">Incorrect email or password</string>
+    <string name="error_auth_login_not_found">Customer not found</string>
+    <string name="error_auth_login_block">Your account is in a blocked status</string>
+    <string name="error_auth_forgot_email_not_found">Can\'t find account with that email</string>
+    <string name="error_auth_forgot_otp_wrong">Please fill in the OTP code sent to your email</string>
+
+    <!-- FIELD -->
+    <string name="field_name">Name</string>
+    <string name="field_phone">Phone Number</string>
+    <string name="field_email">Email</string>
+    <string name="field_password">Password</string>
+    <string name="field_password_confirmation">Repeat Password</string>
+    <string name="field_agree">I\'m agree to Terms &amp; Condition and Privacy Policy getMontir</string>
+    <string name="field_resend_otp">Resend OTP Code</string>
+
+    <!-- BUTTON -->
+    <string name="button_chooser_register">Create Account</string>
+    <string name="button_chooser_login">Login</string>
+    <string name="button_social_register_google">Register with Google</string>
+    <string name="button_social_register_facebook">Register with Facebook</string>
+    <string name="button_social_login_google">Login with Google</string>
+    <string name="button_social_login_facebook">Login with Facebook</string>
+    <string name="button_register">Register</string>
+    <string name="button_login">Login</string>
+    <string name="button_forgot_email">Send Verification Code</string>
+    <string name="button_forgot_confirm">Verify</string>
+    <string name="button_forgot_change">Change Password</string>
+    <string name="button_retry">Try Again</string>
+    <string name="button_close">Close</string>
+    <string name="button_update">Update</string>
+
+    <!-- DIVIDER -->
+    <string name="divider_social">or</string>
+
+    <!-- WALKTHROUGH ACTIVITY -->
+    <string name="walkthrough_button_finish">Ok, Let\'s Go!</string>
+
+    <!-- AUTH ACTIVITY -->
+    <string name="register_title">Register</string>
+    <string name="sign_in_title">Login</string>
+    <string name="forgot_email_title">Forgot Password?</string>
+    <string name="forgot_email_description">Enter the email address associated with your account. We will send you an OTP code to use to change your password.</string>
+    <string name="forgot_confirm_title">Verification</string>
+    <string name="forgot_confirm_description">Enter the 4 digit code that has been sent to your email.</string>
+    <string name="forgot_confirm_resend_title">Succeed</string>
+    <string name="forgot_confirm_resend_message">A verification code has been sent to your email.</string>
+    <string name="forgot_change_title">Create New Password</string>
+    <string name="forgot_change_description">Your new password must be different from the password that was used previously.</string>
+    <string name="walkthrough_third_description">We provide a faster service with a home service system or a mechanic comes directly to the house.</string>
+    <string name="walkthrough_third_title">Faster</string>
+    <string name="walkthrough_second_description">With an easy ordering system and customer service that is ready to help you servicing your vehicle.</string>
+    <string name="walkthrough_second_title">Easier</string>
+    <string name="walkthrough_first_description">With service down to the smallest detail and also spare parts that are more complete, make you calm in servicing your vehicle</string>
+    <string name="walkthrough_first_title">More Complete</string>
+    <string name="walkthrough_button_skip">Skip</string>
+    <string name="walkthrough_button_next">Next</string>
+
+    <!-- OFFLINE -->
+    <string name="offline_title">No Connectivity</string>
+    <string name="offline_description">There is no internet connection. Try again when connected to the internet</string>
+
+    <!-- UPDATE -->
+    <string name="update_title">Updates Available</string>
+    <string name="update_description">Please update the getMontir application to get comfortable using this application.</string>
 </resources>

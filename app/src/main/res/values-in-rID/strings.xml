@@ -1,4 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">getMontir Mitra</string>
+
+    <!-- ERROR -->
+    <string name="error_field_name_empty">Harap isi nama Anda</string>
+    <string name="error_field_phone_empty">Harap isi nomer telepon Anda</string>
+    <string name="error_field_phone_length">Harap isi nomer telepon yang valid</string>
+    <string name="error_field_email_empty">Harap isi email Anda</string>
+    <string name="error_field_email_invalid">Harap isi email yang valid</string>
+    <string name="error_field_password_empty">Harap isi kata sandi Anda</string>
+    <string name="error_field_password_length">Kata sandi minimal 6 karakter</string>
+    <string name="error_field_password_confirmation">Kata sandi tidak sama</string>
+    <string name="error_field_password_confirmation_empty">Harap isi kembali kata sandi Anda</string>
+    <string name="error_field_otp_empty">Harap isi kode konfirmasi</string>
+    <string name="error_field_agree_unchecked">Anda harus setuju jika ingin mendaftar</string>
+    <string name="error_auth_login_wrong">Email atau kata sandi salah</string>
+    <string name="error_auth_login_not_found">Pengguna tidak ditemukan</string>
+    <string name="error_auth_login_block">Akun Anda dalam status terblokir</string>
+    <string name="error_auth_forgot_email_not_found">Tidak dapat menemukan akun dengan email tersebut</string>
+    <string name="error_auth_forgot_otp_wrong">Silahkan isi dengan kode OTP yang dikirim ke email Anda</string>
+
+    <!-- FIELD -->
+    <string name="field_name">Nama Lengkap</string>
+    <string name="field_phone">No. Telepon</string>
+    <string name="field_email">Email</string>
+    <string name="field_password">Kata Sandi</string>
+    <string name="field_password_confirmation">Ulangi Kata Sandi</string>
+    <string name="field_agree">Saya setuju dengan Syarat &amp; Ketentuan dan Kebijakan Privasi getMontir</string>
+    <string name="field_resend_otp">Kirim ulang kode konfirmasi</string>
+    <string name="forgot_confirm_resend_title">Berhasil</string>
+    <string name="forgot_confirm_resend_message">Kode verifikasi telah dikirimkan ke email Anda.</string>
+
+    <!-- BUTTON -->
+    <string name="button_chooser_register">Buat Akun</string>
+    <string name="button_chooser_login">Masuk</string>
+    <string name="button_social_register_google">Daftar dengan Google</string>
+    <string name="button_social_register_facebook">Daftar dengan Facbeook</string>
+    <string name="button_social_login_google">Masuk dengan Google</string>
+    <string name="button_social_login_facebook">Masuk dengan Facebook</string>
+    <string name="button_register">Daftar</string>
+    <string name="button_login">Masuk</string>
+    <string name="button_forgot_email">Kirim Kode Verifikasi</string>
+    <string name="button_forgot_confirm">Verifikasi</string>
+    <string name="button_forgot_change">Ganti Kata Sandi</string>
+    <string name="button_retry">Coba Lagi</string>
+    <string name="button_close">Tutup</string>
+    <string name="button_update">Perbarui</string>
+
+    <!-- DIVIDER -->
+    <string name="divider_social">atau</string>
+
+    <!-- OFFLINE ACTIVITY -->
+    <string name="offline_description">Tidak ada koneksi internet. Coba lagi ketika sudah terhubung dengan internet</string>
+    <string name="offline_title">Tidak Ada Koneksi</string>
+
+    <!-- UPDATE ACTIVITY -->
+    <string name="update_title">Pembaruan Tersedia</string>
+    <string name="update_description">Perbarui aplikasi getMontir untuk mendapatkan kenyamanan dalam menggunakan aplikasi ini.</string>
+
+    <!-- WALKTHROUGH ACTIVITY -->
+    <string name="walkthrough_third_description">Kami memberikan pelayanan yang lebih cepat dengan sistem home service atau montir langsung datang ke rumah.</string>
+    <string name="walkthrough_third_title">Lebih Cepat</string>
+    <string name="walkthrough_second_description">Dengan sistem pemesanan yang mudah serta layanan customer service yang siap membantu anda untuk menservis kendaraan Anda.</string>
+    <string name="walkthrough_second_title">Lebih Mudah</string>
+    <string name="walkthrough_first_description">Dengan pelayanan hingga detail terkecil dan juga spare part yang lebih lengkap membuat anda tenang dalam menservis kendaraan anda</string>
+    <string name="walkthrough_first_title">Lebih Lengkap</string>
+    <string name="walkthrough_button_finish">Okkay, Let\'s Go!</string>
+    <string name="walkthrough_button_skip">Lewati</string>
+    <string name="walkthrough_button_next">Selanjutnya</string>
+
+    <!-- AUTH ACTIVITY -->
+    <string name="sign_in_title">Masuk</string>
+    <string name="register_title">Register</string>
+    <string name="forgot_email_title">Lupa Kata Sandi?</string>
+    <string name="forgot_email_description">Masukkan alamat email yang terkait dengan akun Anda. Kami akan mengirimkan kode OTP untuk digunakan mengganti kata sandi Anda.</string>
+    <string name="forgot_confirm_title">Verifikasi Ganti Kata Sandi</string>
+    <string name="forgot_confirm_description">Masukan 4 digit kode yang telah dikirim ke email Anda.</string>
+    <string name="forgot_change_title">Buat Kata Sandi Baru</string>
+    <string name="forgot_change_description">Kata sandi baru Anda harus berbeda dari kata sandi yang digunakan sebelumnya.</string>
+
 </resources>

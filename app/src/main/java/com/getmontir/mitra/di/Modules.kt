@@ -7,7 +7,9 @@ import com.getmontir.lib.data.network.APIService
 import com.getmontir.lib.di.databaseModules
 import com.getmontir.lib.di.repositoryModule
 import com.getmontir.lib.presentation.utils.SessionManager
+import com.getmontir.mitra.viewmodel.SplashScreenViewModel
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val commonModule = module {
@@ -18,10 +20,12 @@ val commonModule = module {
 }
 
 val remoteModule = module {
-    single { APIService.createService(androidContext(), get(), "bCtgjoy3gGQHAdoyzFbduGhAGr5hQND5Fbt7ggMWNgi10_dcPBmr9cHc5tK9v") }
+    single { APIService.createService(androidContext(), get(), "XTENKEUwN0OPHNvuuTkSlP2OILKkgmgdr4ausNRCKAJdR_D05CeQFoWoMoht3") }
 }
 
-val viewModelModule = module {}
+val viewModelModule = module {
+    viewModel { SplashScreenViewModel( get() ) }
+}
 
 val appModules = listOf(
     commonModule,

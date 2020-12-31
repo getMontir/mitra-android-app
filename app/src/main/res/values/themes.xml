@@ -70,4 +70,12 @@
         <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorControlHighlight</item>
     </style>
 
+    <style name="Theme.GetMontirMitra.Splash">
+        <item name="android:statusBarColor" tools:ignore="NewApi">@color/black_blue_900</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">@color/black_blue_900</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?android:attr/colorBackground</item>
+    </style>
+
 </resources>

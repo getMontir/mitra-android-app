@@ -25,6 +25,9 @@
 
     <color name="black_800">#121212</color> <!--Color surface (dark)-->
 
+    <color name="black_blue_700">#00023d</color>
+    <color name="black_blue_900">#000119</color>
+
     <color name="red_200">#cf6679</color> <!--Color error (dark)-->
     <color name="red_600">#b00020</color> <!--Color error (light)-->
 
