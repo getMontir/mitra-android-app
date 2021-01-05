@@ -1,5 +1,6 @@
 package com.getmontir.mitra.view.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -65,7 +66,9 @@ class WalkThroughActivity : BaseActivity() {
         sessionManager.isUsed = true
 
         // Launch auth activity
-//        NavigationActivity.launchActivity(this, AuthActivity::class.java)
+        startActivity(
+            Intent(this, AuthActivity::class.java)
+        )
         finish()
     }
 

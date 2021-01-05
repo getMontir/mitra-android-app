@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.getmontir.mitra.BuildConfig
 import com.getmontir.mitra.R
+import com.getmontir.mitra.view.ui.AuthActivity
 import com.getmontir.mitra.view.ui.WalkThroughActivity
 import com.getmontir.mitra.view.ui.base.GetFragment
 import com.getmontir.mitra.viewmodel.SplashScreenViewModel
@@ -57,6 +58,9 @@ class SplashScreenFragment : GetFragment() {
                         )
                     } else {
                         // Start auth activity
+                        startActivity(
+                            Intent(requireContext(), AuthActivity::class.java)
+                        )
                     }
                 } else {
                     // Start main activity

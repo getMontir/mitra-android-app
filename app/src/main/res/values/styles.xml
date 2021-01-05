@@ -20,12 +20,22 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Widget.GetMontirMitra.Button.White">
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
     <style name="Widget.GetMontirMitra.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="shapeAppearance">@style/ShapeAppearance.GetMontirMitra.Button</item>
     </style>
 
     <style name="Widget.GetMontirMitra.Button.OutlinedButton.Primary">
         <item name="strokeColor">@color/btn_stroke_color_selector</item>
+    </style>
+
+    <style name="Widget.GetMontirMitra.Button.OutlinedButton.White">
+        <item name="android:textColor">@color/white</item>
+        <item name="strokeColor">@color/white</item>
     </style>
 
     <style name="Widget.GetMontirMitra.Button.OutlinedButton.Icon">
