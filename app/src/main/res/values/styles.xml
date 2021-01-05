@@ -36,6 +36,8 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="Widget.GetMontirMitra.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton"></style>
+
     <style name="Widget.GetMontirMitra.HintTextAppearance" parent="TextAppearance.Design.Hint">
         <item name="android:textStyle">bold</item>
     </style>

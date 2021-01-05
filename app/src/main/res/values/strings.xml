@@ -64,12 +64,12 @@
     <string name="forgot_confirm_resend_message">A verification code has been sent to your email.</string>
     <string name="forgot_change_title">Create New Password</string>
     <string name="forgot_change_description">Your new password must be different from the password that was used previously.</string>
-    <string name="walkthrough_third_description">We provide a faster service with a home service system or a mechanic comes directly to the house.</string>
-    <string name="walkthrough_third_title">Faster</string>
-    <string name="walkthrough_second_description">With an easy ordering system and customer service that is ready to help you servicing your vehicle.</string>
-    <string name="walkthrough_second_title">Easier</string>
-    <string name="walkthrough_first_description">With service down to the smallest detail and also spare parts that are more complete, make you calm in servicing your vehicle</string>
-    <string name="walkthrough_first_title">More Complete</string>
+    <string name="walkthrough_third_description">With the ease of managing the services and spare parts that you sell, it will be easier for you to transact with customers.</string>
+    <string name="walkthrough_third_title">Easy To Use</string>
+    <string name="walkthrough_second_description">Can be used anywhere, anytime and even if you don\'t have a workshop at all.</string>
+    <string name="walkthrough_second_title">Mobile Workshop</string>
+    <string name="walkthrough_first_description">Enjoy the convenience of accepting orders online anywhere and anytime.</string>
+    <string name="walkthrough_first_title">Online Booking</string>
     <string name="walkthrough_button_skip">Skip</string>
     <string name="walkthrough_button_next">Next</string>
 

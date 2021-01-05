@@ -59,12 +59,12 @@
     <string name="update_description">Perbarui aplikasi getMontir untuk mendapatkan kenyamanan dalam menggunakan aplikasi ini.</string>
 
     <!-- WALKTHROUGH ACTIVITY -->
-    <string name="walkthrough_third_description">Kami memberikan pelayanan yang lebih cepat dengan sistem home service atau montir langsung datang ke rumah.</string>
-    <string name="walkthrough_third_title">Lebih Cepat</string>
-    <string name="walkthrough_second_description">Dengan sistem pemesanan yang mudah serta layanan customer service yang siap membantu anda untuk menservis kendaraan Anda.</string>
-    <string name="walkthrough_second_title">Lebih Mudah</string>
-    <string name="walkthrough_first_description">Dengan pelayanan hingga detail terkecil dan juga spare part yang lebih lengkap membuat anda tenang dalam menservis kendaraan anda</string>
-    <string name="walkthrough_first_title">Lebih Lengkap</string>
+    <string name="walkthrough_third_description">Dengan kemudahan untuk mengatur layanan dan spare part yang Anda jual, memudahkan Anda dalam bertransaksi dengan pelanggan.</string>
+    <string name="walkthrough_third_title">Mudah Digunakan</string>
+    <string name="walkthrough_second_description">Dapat digunakan dimanapun, kapanpun dan walaupun Anda tidak mempunyai bengkel sama sekali.</string>
+    <string name="walkthrough_second_title">Bengkel Seluler</string>
+    <string name="walkthrough_first_description">Nikmati kemudahan menerima pesanan secara online dimanapun dan kapanpun.</string>
+    <string name="walkthrough_first_title">Pemesanan Online</string>
     <string name="walkthrough_button_finish">Okkay, Let\'s Go!</string>
     <string name="walkthrough_button_skip">Lewati</string>
     <string name="walkthrough_button_next">Selanjutnya</string>

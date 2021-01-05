@@ -1,5 +1,6 @@
 package com.getmontir.mitra.view.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.getmontir.mitra.BuildConfig
 import com.getmontir.mitra.R
+import com.getmontir.mitra.view.ui.WalkThroughActivity
 import com.getmontir.mitra.view.ui.base.GetFragment
 import com.getmontir.mitra.viewmodel.SplashScreenViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -49,7 +51,10 @@ class SplashScreenFragment : GetFragment() {
             } else {
                 if( !sessionManager.isLoggedIn ) {
                     if( !sessionManager.isUsed ) {
-                        // Start walkthrough activity
+                        // Start walk through activity
+                        startActivity(
+                            Intent(requireContext(), WalkThroughActivity::class.java)
+                        )
                     } else {
                         // Start auth activity
                     }
