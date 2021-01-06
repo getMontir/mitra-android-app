@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_auth"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_auth"
     app:startDestination="@id/authChooserFragment">
 
     <fragment
         android:id="@+id/authChooserFragment"
         android:name="com.getmontir.mitra.view.ui.auth.AuthChooserFragment"
-        android:label="" />
+        android:label="" >
+        <action
+            android:id="@+id/action_authChooserFragment_to_roleChooserFragment"
+            app:destination="@id/roleChooserFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/roleChooserFragment"
+        android:name="com.getmontir.mitra.view.ui.auth.RoleChooserFragment"
+        android:label="@string/auth_chooser_title"
+        tools:layout="@layout/fragment_auth_role_chooser" >
+        <argument
+            android:name="destination"
+            app:argType="com.getmontir.mitra.utils.enums.AuthDestination"
+            android:defaultValue="LOGIN" />
+    </fragment>
 
 </navigation>

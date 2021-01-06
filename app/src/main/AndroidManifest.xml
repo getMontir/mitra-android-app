@@ -23,8 +23,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GetMontirMitra">
-        <activity android:name=".view.ui.AuthActivity"></activity>
-        <activity android:name=".view.ui.WalkThroughActivity"></activity>
+        <activity
+            android:name=".view.ui.AuthActivity"
+            android:theme="@style/Theme.GetMontirMitra.Auth"/>
+        <activity
+            android:name=".view.ui.WalkThroughActivity"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.getmontir.mitra.R
 import com.getmontir.mitra.databinding.FragmentAuthChooserBinding
+import com.getmontir.mitra.utils.enums.AuthDestination
 import com.getmontir.mitra.view.ui.base.GetFragment
 import com.getmontir.mitra.viewmodel.AuthViewModel
 import org.koin.android.ext.android.inject
@@ -36,13 +38,23 @@ class AuthChooserFragment : GetFragment() {
         // Setup toolbar
         val toolbar: Toolbar = binding.toolbar
         val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.authChooserFragment
+            R.id.authChooserFragment,
+            R.id.roleChooserFragment
         ))
         val navHostFragment = NavHostFragment.findNavController(this)
         NavigationUI.setupWithNavController(toolbar, navHostFragment, appBarConfiguration)
 
         // Setup listener
-        binding.btnRegister.setOnClickListener {  }
-        binding.btnLogin.setOnClickListener {  }
+        binding.btnRegister.setOnClickListener {
+            showRoleChooser( AuthDestination.REGISTER )
+        }
+        binding.btnLogin.setOnClickListener {
+            showRoleChooser( AuthDestination.LOGIN )
+        }
+    }
+
+    private fun showRoleChooser( destination: AuthDestination ) {
+        val action = AuthChooserFragmentDirections.actionAuthChooserFragmentToRoleChooserFragment(destination)
+        findNavController().navigate(action)
     }
 }

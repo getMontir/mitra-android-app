@@ -12,6 +12,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
 
+    <color name="gray100">#9b9b9b</color>
+
     <color name="primary200">#E3E3E3</color>
     <color name="primary300">#c6c6c6</color>
     <color name="primary400">#aaaaaa</color>

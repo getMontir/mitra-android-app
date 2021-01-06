@@ -46,6 +46,7 @@
     <string name="button_retry">Try Again</string>
     <string name="button_close">Close</string>
     <string name="button_update">Update</string>
+    <string name="button_choose">Choose</string>
 
     <!-- DIVIDER -->
     <string name="divider_social">or</string>
@@ -80,4 +81,11 @@
     <!-- UPDATE -->
     <string name="update_title">Updates Available</string>
     <string name="update_description">Please update the getMontir application to get comfortable using this application.</string>
+
+    <!-- AUTH CHOOSE ROLE -->
+    <string name="auth_chooser_title">Choose Your Role</string>
+    <string name="auth_chooser_station" translatable="false">Station</string>
+    <string name="auth_chooser_station_description">getMontir partner workshop</string>
+    <string name="auth_chooser_mechanic">Mechanic</string>
+    <string name="auth_chooser_mechanic_description">Technicians who will run the repair shop services.</string>
 </resources>
