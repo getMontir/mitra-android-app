@@ -17,7 +17,7 @@
     <string name="error_field_otp_empty">Please fill with your OTP code</string>
     <string name="error_field_agree_unchecked">You must agree for registering</string>
     <string name="error_auth_login_wrong">Incorrect email or password</string>
-    <string name="error_auth_login_not_found">Customer not found</string>
+    <string name="error_auth_login_not_found">User not found</string>
     <string name="error_auth_login_block">Your account is in a blocked status</string>
     <string name="error_auth_forgot_email_not_found">Can\'t find account with that email</string>
     <string name="error_auth_forgot_otp_wrong">Please fill in the OTP code sent to your email</string>

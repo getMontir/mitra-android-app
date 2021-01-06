@@ -26,6 +26,22 @@
             android:name="destination"
             app:argType="com.getmontir.mitra.utils.enums.AuthDestination"
             android:defaultValue="LOGIN" />
+        <action
+            android:id="@+id/action_roleChooserFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.getmontir.mitra.view.ui.auth.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_auth_login" >
+        <argument
+            android:name="role"
+            app:argType="com.getmontir.mitra.utils.enums.Role" />
     </fragment>
 
 </navigation>

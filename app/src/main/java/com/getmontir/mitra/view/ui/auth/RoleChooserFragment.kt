@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -66,6 +67,7 @@ class RoleChooserFragment : GetFragment() {
         destination = args.destination
 
         // Add role item
+        listRole.clear()
         listRole.add(
             AuthChooserItem(
                 icon = R.drawable.ic_actor_station,
@@ -104,10 +106,19 @@ class RoleChooserFragment : GetFragment() {
     private fun showDestination() {
         if( destination == AuthDestination.LOGIN ) {
             // Show login view
+            role?.let {
+                val action = RoleChooserFragmentDirections.actionRoleChooserFragmentToLoginFragment(it)
+                findNavController().navigate(action)
+            }
         }
 
         if( destination == AuthDestination.REGISTER ) {
             // Show register view
+            if( role == Role.MECHANIC ) {
+                // Show register mechanic
+            } else {
+                // Show contact register
+            }
         }
     }
 }
