@@ -56,6 +56,13 @@
         <argument
             android:name="role"
             app:argType="com.getmontir.mitra.utils.enums.Role" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordSendFragment"
+            app:destination="@id/forgotPasswordSendFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/stationRegisterContactFragment"
@@ -67,5 +74,14 @@
         android:name="com.getmontir.mitra.view.ui.auth.MechanicRegisterFragment"
         android:label=""
         tools:layout="@layout/fragment_auth_mechanic_register" />
+    <fragment
+        android:id="@+id/forgotPasswordSendFragment"
+        android:name="com.getmontir.mitra.view.ui.auth.ForgotPasswordSendFragment"
+        android:label=""
+        tools:layout="@layout/fragment_auth_forgot_password_send" >
+        <argument
+            android:name="role"
+            app:argType="com.getmontir.mitra.utils.enums.Role" />
+    </fragment>
 
 </navigation>

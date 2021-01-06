@@ -195,8 +195,8 @@ class LoginFragment : GetFragment() {
 
         })
         binding.textActionForgot.setOnClickListener {
-//            val action = LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment()
-//            findNavController().navigate(action)
+            val action = LoginFragmentDirections.actionLoginFragmentToForgotPasswordSendFragment(args.role)
+            findNavController().navigate(action)
         }
     }
 
