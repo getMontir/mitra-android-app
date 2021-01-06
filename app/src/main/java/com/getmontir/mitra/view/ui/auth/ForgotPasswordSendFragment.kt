@@ -112,7 +112,7 @@ class ForgotPasswordSendFragment : GetFragment() {
     }
 
     private fun showConfirm() {
-//        val action = ForgotPasswordFragmentDirections.actionForgotPasswordFragmentToForgotConfirmFragment()
-//        findNavController().navigate(action)
+        val action = ForgotPasswordSendFragmentDirections.actionForgotPasswordSendFragmentToForgotPasswordConfirmFragment(args.role)
+        findNavController().navigate(action)
     }
 }
