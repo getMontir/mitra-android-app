@@ -172,7 +172,7 @@ class ForgotPasswordConfirmFragment : GetFragment() {
     }
 
     private fun showChangePassword() {
-//        val action = ForgotConfirmFragmentDirections.actionForgotConfirmFragmentToForgotChangePasswordFragment()
-//        findNavController().navigate(action)
+        val action = ForgotPasswordConfirmFragmentDirections.actionForgotPasswordConfirmFragmentToForgotPasswordResetFragment(args.role)
+        findNavController().navigate(action)
     }
 }
