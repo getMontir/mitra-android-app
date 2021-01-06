@@ -116,6 +116,8 @@ class RoleChooserFragment : GetFragment() {
             // Show register view
             if( role == Role.MECHANIC ) {
                 // Show register mechanic
+                val action = RoleChooserFragmentDirections.actionRoleChooserFragmentToMechanicRegisterFragment()
+                findNavController().navigate(action)
             } else {
                 // Show contact register
                 val action = RoleChooserFragmentDirections.actionRoleChooserFragmentToStationRegisterContactFragment()

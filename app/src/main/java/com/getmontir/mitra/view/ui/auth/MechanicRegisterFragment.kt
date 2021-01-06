@@ -13,8 +13,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.NavigationUI
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
@@ -22,12 +20,10 @@ import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
-import com.getmontir.lib.ext.isEmailNotNull
-import com.getmontir.lib.ext.isPassword
+import com.getmontir.lib.ext.*
 import com.getmontir.mitra.R
-import com.getmontir.mitra.databinding.FragmentAuthLoginBinding
+import com.getmontir.mitra.databinding.FragmentAuthMechanicRegisterBinding
 import com.getmontir.mitra.utils.enums.LoginType
-import com.getmontir.mitra.utils.enums.Role
 import com.getmontir.mitra.view.ui.base.GetFragment
 import com.getmontir.mitra.viewmodel.AuthViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -45,30 +41,28 @@ import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
+ * Use the [MechanicRegisterFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LoginFragment : GetFragment() {
+class MechanicRegisterFragment : GetFragment() {
 
     companion object {
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @return A new instance of fragment LoginFragment.
+         * @return A new instance of fragment MechanicRegisterFragment.
          */
         @JvmStatic
-        fun newInstance() = LoginFragment()
-        private val TAG = LoginFragment::class.java.simpleName
+        fun newInstance() = MechanicRegisterFragment()
+        private val TAG = MechanicRegisterFragment::class.java.simpleName
     }
 
-    private lateinit var binding: FragmentAuthLoginBinding
+    private lateinit var binding: FragmentAuthMechanicRegisterBinding
 
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
     private lateinit var callbackManager: CallbackManager
-
-    private val args: LoginFragmentArgs by navArgs()
 
     private val viewModel: AuthViewModel by inject()
 
@@ -84,7 +78,7 @@ class LoginFragment : GetFragment() {
 
     private var account: GoogleSignInAccount? = null
 
-    private var loginType: LoginType? = null
+    private var registerType: LoginType? = null
 
     private var accessToken: AccessToken? = null
 
@@ -108,17 +102,12 @@ class LoginFragment : GetFragment() {
 
                 idEmail = account?.email
 
-                if( args.role == Role.MECHANIC ) {
-                    idToken?.let { viewModel.mechanicLoginGoogle(it, fcmToken ) }
-                } else {
-                    idToken?.let { viewModel.stationLoginGoogle(it, fcmToken ) }
-                }
-                loginType = LoginType.GOOGLE
+                idToken?.let { viewModel.mechanicRegisterGoogle(it, fcmToken) }
+                registerType = LoginType.GOOGLE
             }
         }
 
-        // Setup View
-        binding = FragmentAuthLoginBinding.inflate(inflater, container, false)
+        binding = FragmentAuthMechanicRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -126,38 +115,26 @@ class LoginFragment : GetFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Setup toolbar
+        // Setup Toolbar
         val toolbar: Toolbar = binding.toolbar
         val navHostFragment = NavHostFragment.findNavController(this)
         NavigationUI.setupWithNavController(toolbar, navHostFragment)
 
-        // Setup args
-        Timber.tag(TAG).d(args.role.toString())
-        if( args.role == Role.MECHANIC ) {
-            binding.iconMechanic.visibility = View.VISIBLE
-        } else {
-            binding.iconStation.visibility = View.VISIBLE
-        }
-
-        // Setup FCM
+        // Setup Firebase
         setupFCM()
         callbackManager = CallbackManager.Factory.create()
 
-        // Setup view model
+        // Setup View Model
         viewModel.token.observe( viewLifecycleOwner, {
             processData("token", it)
         })
-        viewModel.user.observe( viewLifecycleOwner, {
+        viewModel.user.observe(viewLifecycleOwner, {
             processData("user", it)
         })
 
-        // Setup view
-        binding.divider.btnSocialFacebook.text = resources.getString(R.string.button_social_login_facebook)
-        binding.divider.btnSocialGoogle.text = resources.getString(R.string.button_social_login_google)
-
-        // Setup listener
-        binding.btnSignIn.setOnClickListener {
-            doLogin()
+        // Setup Listener
+        binding.btnSignUp.setOnClickListener {
+            doRegister()
         }
         binding.divider.btnSocialGoogle.setOnClickListener {
             val intent = googleSignInClient.signInIntent
@@ -166,21 +143,17 @@ class LoginFragment : GetFragment() {
         binding.divider.btnSocialFacebook.setOnClickListener {
             binding.divider.btnFacebook.performClick()
         }
+
         binding.divider.btnFacebook.setPermissions("email", "public_profile")
         binding.divider.btnFacebook.fragment = this
-        binding.divider.btnFacebook.registerCallback(callbackManager, object:
-            FacebookCallback<LoginResult> {
+        binding.divider.btnFacebook.registerCallback(callbackManager, object: FacebookCallback<LoginResult> {
+
             override fun onSuccess(result: LoginResult?) {
-                accessToken = result?.accessToken
+                val accessToken = result?.accessToken
                 val token = accessToken?.token
                 Timber.tag(TAG).d("facebook:onSuccess $token")
                 if (token != null) {
-                    loginType = LoginType.FACEBOOK
-                    if( args.role == Role.MECHANIC ) {
-                        viewModel.mechanicLoginFacebook(token, fcmToken)
-                    } else {
-                        viewModel.stationLoginFacebook(token, fcmToken)
-                    }
+                    viewModel.mechanicRegisterFacebook(token, fcmToken)
                 }
             }
 
@@ -194,21 +167,11 @@ class LoginFragment : GetFragment() {
             }
 
         })
-        binding.textActionForgot.setOnClickListener {
-//            val action = LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment()
-//            findNavController().navigate(action)
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        Timber.tag(TAG).d("ACTIVITYRESULT:RESULTCODE:: $resultCode")
-        Timber.tag(TAG).d("ACTIVITYRESULT:REQUESTCODE:: $requestCode")
-
-        if( resultCode == Activity.RESULT_OK ) {
-            // Pass the activity result back to the Facebook SDK
-            callbackManager.onActivityResult(requestCode, resultCode, data)
-        }
+        callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 
     @InternalCoroutinesApi
@@ -216,19 +179,24 @@ class LoginFragment : GetFragment() {
         super.processResult(tag, data)
 
         if( tag == "token" ) {
-            showLoader()
             // Firebase Auth With Google
-            if( loginType == LoginType.GOOGLE ) {
-                account?.let {
-                    firebaseAuthWithGoogle(it)
+            when (registerType) {
+                LoginType.GOOGLE -> {
+                    showLoader()
+                    account?.let {
+                        firebaseAuthWithGoogle(it)
+                    }
                 }
-            }else if( loginType == LoginType.FACEBOOK ) {
-                accessToken?.let {
-                    firebaseAuthWithFacebook(it)
+                LoginType.FACEBOOK -> {
+                    showLoader()
+                    accessToken?.let {
+                        firebaseAuthWithFacebook(it)
+                    }
                 }
-            } else {
-                // Load user information
-                viewModel.profile()
+                else -> {
+                    // Load user information
+                    viewModel.profile()
+                }
             }
         }
 
@@ -243,7 +211,7 @@ class LoginFragment : GetFragment() {
      */
     override fun handleHttpNotFound(tag: String, e: Exception) {
         if( tag == "token" ) {
-            if( loginType == null ) {
+            if( registerType == null ) {
                 binding.textLayoutEmail.error = getString(R.string.error_auth_login_not_found)
             } else {
                 val alert = AlertDialog.Builder(requireContext(), R.style.ThemeOverlay_MaterialComponents_Dialog_Alert)
@@ -273,7 +241,7 @@ class LoginFragment : GetFragment() {
      */
     override fun handleHttpBadRequest(tag: String, e: Exception) {
         if( tag == "token" ) {
-            if( loginType == null ) {
+            if( registerType == null ) {
                 binding.textLayoutEmail.error = getString(R.string.error_auth_login_block)
             } else {
                 val alert = AlertDialog.Builder(requireContext(), R.style.ThemeOverlay_MaterialComponents_Dialog_Alert)
@@ -303,27 +271,38 @@ class LoginFragment : GetFragment() {
     }
 
     @InternalCoroutinesApi
-    private fun doLogin() {
+    private fun doRegister() {
+        val name = binding.textInputName.text.toString().trim()
+        val phone = binding.textInputPhone.text.toString().trim()
         val email = binding.textInputEmail.text.toString().trim()
         val password = binding.textInputPassword.text.toString().trim()
+        val passwordConfirmation = binding.textInputPasswordRepeat.text.toString().trim()
 
-        if(
-            binding.textInputEmail.isEmailNotNull(
-                getString(R.string.error_field_email_empty),
-                getString(R.string.error_field_email_invalid)
-            )
-            && binding.textInputPassword.isPassword(
-                getString(R.string.error_field_password_empty),
-                getString(R.string.error_field_password_length)
-            )
-        ) {
-            loginType = null
-            binding.textLayoutEmail.error = null
-            binding.textLayoutPassword.error = null
-            if( args.role == Role.MECHANIC ) {
-                viewModel.mechanicLogin(email, password)
-            } else {
-                viewModel.stationLogin(email, password)
+        resources.apply {
+            if(
+                binding.textInputName.isNotNullOrEmpty(
+                    getString(R.string.error_field_name_empty)
+                )
+                && binding.textInputPhone.isPhoneNotNull(
+                    getString(R.string.error_field_phone_empty),
+                    getString(R.string.error_field_phone_length)
+                )
+                && binding.textInputEmail.isEmailNotNull(
+                    getString(R.string.error_field_email_empty),
+                    getString(R.string.error_field_email_invalid)
+                )
+                && binding.textInputPassword.isPasswordConfirmation(
+                    binding.textInputPasswordRepeat,
+                    getString(R.string.error_field_password_empty),
+                    getString(R.string.error_field_password_confirmation_empty),
+                    getString(R.string.error_field_password_length),
+                    getString(R.string.error_field_password_confirmation)
+                )
+                && binding.textInputAgree.isMustChecked(
+                    getString(R.string.error_field_agree_unchecked)
+                )
+            ) {
+                viewModel.mechanicRegister( name, phone, email, password, passwordConfirmation )
             }
         }
     }
@@ -368,4 +347,5 @@ class LoginFragment : GetFragment() {
                 }
             }
     }
+
 }

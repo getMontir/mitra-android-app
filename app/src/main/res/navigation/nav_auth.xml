@@ -40,6 +40,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_roleChooserFragment_to_mechanicRegisterFragment"
+            app:destination="@id/mechanicRegisterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -55,5 +62,10 @@
         android:name="com.getmontir.mitra.view.ui.auth.StationRegisterContactFragment"
         android:label=""
         tools:layout="@layout/fragment_auth_station_register_contact" />
+    <fragment
+        android:id="@+id/mechanicRegisterFragment"
+        android:name="com.getmontir.mitra.view.ui.auth.MechanicRegisterFragment"
+        android:label=""
+        tools:layout="@layout/fragment_auth_mechanic_register" />
 
 </navigation>
