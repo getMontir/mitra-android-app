@@ -85,5 +85,8 @@
     <string name="auth_chooser_station_description">Bengkel mitra getMontir</string>
     <string name="auth_chooser_mechanic">Mekanik</string>
     <string name="auth_chooser_mechanic_description">Teknisi yang akan menjalakan layanan bengkel</string>
+    <string name="register_contact_title">Mohon Maaf</string>
+    <string name="register_contact_description">Saat ini kami hanya menerima permintaan pendaftaraan melalui agen kami, silahkan kontak agen kami untuk informasi selanjutnya.</string>
+    <string name="button_agent">Kontak Agen (%1$s)</string>
 
 </resources>

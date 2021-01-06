@@ -33,6 +33,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_roleChooserFragment_to_stationRegisterContactFragment"
+            app:destination="@id/stationRegisterContactFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -43,5 +50,10 @@
             android:name="role"
             app:argType="com.getmontir.mitra.utils.enums.Role" />
     </fragment>
+    <fragment
+        android:id="@+id/stationRegisterContactFragment"
+        android:name="com.getmontir.mitra.view.ui.auth.StationRegisterContactFragment"
+        android:label=""
+        tools:layout="@layout/fragment_auth_station_register_contact" />
 
 </navigation>

@@ -118,6 +118,8 @@ class RoleChooserFragment : GetFragment() {
                 // Show register mechanic
             } else {
                 // Show contact register
+                val action = RoleChooserFragmentDirections.actionRoleChooserFragmentToStationRegisterContactFragment()
+                findNavController().navigate(action)
             }
         }
     }

@@ -47,6 +47,7 @@
     <string name="button_close">Close</string>
     <string name="button_update">Update</string>
     <string name="button_choose">Choose</string>
+    <string name="button_agent">Call Agent (%1$s)</string>
 
     <!-- DIVIDER -->
     <string name="divider_social">or</string>
@@ -88,4 +89,8 @@
     <string name="auth_chooser_station_description">getMontir partner workshop</string>
     <string name="auth_chooser_mechanic">Mechanic</string>
     <string name="auth_chooser_mechanic_description">Technicians who will run the repair shop services.</string>
+
+    <!-- REGISTER CONTACT ACTIVITY -->
+    <string name="register_contact_title">We Are Sorry</string>
+    <string name="register_contact_description">Currently we open registration for station via agent only, please contact our agent for more information</string>
 </resources>
